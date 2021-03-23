@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html id="page">
+   <head>
+      <title>Programacion 3</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+      <meta charset="UTF-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge;"/>
+      <link href="https://unpkg.com/cirrus-ui" type="text/css" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" ></script> 
+   </head>
+   <body>
+
+      <!-- HEADER -->
+      <div class="header header-fixed unselectable header-animated">
+         <div class="header-brand">
+            <div class="nav-item no-hover">
+               <h6 class="title">Programacion 3</h6>
+            </div>
+            <div class="nav-item nav-btn" id="header-btn"> <span></span> <span></span> <span></span> </div>
+         </div>
+         <div class="header-nav" id="header-menu">
+            <div class="nav-left">
+               <div class="nav-item text-center">  <span class="icon"> <i class="fas fa-code"></i> </span> </div>
+            </div>
+
+         </div>
+      </div>
+
+      <section class="section" style="background-color: #FBF8F3;">
+         <div class="hero">
+            <div class="hero-body">
+               <div class="content">
+
+               <!-- ROOT -->
+               <div id="root" class="row">
+               </div>
+
+               
+
+               <!-- BUSCADOR -->
+               <div class="form-group card">
+                  <input type="search" class="form-group-input" placeholder="Filtrar por Nombre, Apellido o Edad">
+                  <button class="form-group-btn">Buscar</button>
+               </div>
+            
+               <!-- AÑADIR PERSONAS -->      
+               <div class="form-group card">
+                  <input type="number" class="input-contains-icon"  placeholder="Agregar x Cantidad de personas">
+                  <button class="form-group-btn">Añadir</button>
+               </div>
+      
+               <!-- ORDENAR -->
+              <div class="input-control card">
+               <select class="select" placeholder="Filtrar por">
+                  <option value="0">Ordenar por</option>
+                   <option value="1">Nombre descendente</option>
+                   <option value="2">Nombre ascendente</option>
+                   <option value="3">Edad descendente</option>
+                   <option value="4">Edad ascendente</option>
+               </select>
+           </div>
+
+           
+           <div class="divider"></div>
+
+               <!-- Contenedor de tarjetas -->
+               <div class="">
+
+
+                  <!-- Card  -->
+                  <div class="tile u-items-center card">
+                     <div class="tile__icon">
+                         <figure class="avatar"><img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png"></figure>
+                     </div>
+                     <div class="tile__container u-hide-overflow">
+                         <p class="tile__title m-0 u-text-no-wrap">Robert Downey Jr. shared a post from <b>Stark Industries</b>.</p>
+                         <p class="tile__subtitle m-0">Robert shared: 'Stark Industries is proud to announce its brand new suit.'</p><span class="info">23 minutes ago</span></div>
+                     <div class="tile__buttons m-0">
+                        <button class="btn-transparent ">Ver detalle <i class="fas fa-angle-right"></i></button>
+                        <button class="btn-transparent ">Descartar <i class="far fa-trash-alt"></i></button>
+                     </div>
+                 </div>
+                 <!-- Fin card-->
+
+
+                  <!-- Card  -->
+                  <div class="tile u-items-center card">
+                     <div class="tile__icon">
+                         <figure class="avatar"><img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png"></figure>
+                     </div>
+                     <div class="tile__container u-hide-overflow">
+                         <p class="tile__title m-0 u-text-no-wrap">Robert Downey Jr. shared a post from <b>Stark Industries</b>.</p>
+                         <p class="tile__subtitle m-0">Robert shared: 'Stark Industries is proud to announce its brand new suit.'</p><span class="info">23 minutes ago</span></div>
+                     <div class="tile__buttons m-0">
+                        <button class="btn-transparent ">Ver detalle <i class="fas fa-angle-right"></i></button>
+                        <button class="btn-transparent ">Descartar <i class="far fa-trash-alt"></i></button>
+                     </div>
+                 </div>
+                 <!-- Fin card-->
+
+                  <!-- Card  -->
+                  <div class="tile u-items-center card">
+                     <div class="tile__icon">
+                         <figure class="avatar"><img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png"></figure>
+                     </div>
+                     <div class="tile__container u-hide-overflow">
+                         <p class="tile__title m-0 u-text-no-wrap">Robert Downey Jr. shared a post from <b>Stark Industries</b>.</p>
+                         <p class="tile__subtitle m-0">Robert shared: 'Stark Industries is proud to announce its brand new suit.'</p><span class="info">23 minutes ago</span></div>
+                     <div class="tile__buttons m-0">
+                        <button class="btn-transparent ">Ver detalle <i class="fas fa-angle-right"></i></button>
+                        <button class="btn-transparent ">Descartar <i class="far fa-trash-alt"></i></button>
+                     </div>
+                 </div>
+                 <!-- Fin card-->
+
+                  <!-- Card  -->
+                  <div class="tile u-items-center card">
+                     <div class="tile__icon">
+                         <figure class="avatar"><img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png"></figure>
+                     </div>
+                     <div class="tile__container u-hide-overflow">
+                         <p class="tile__title m-0 u-text-no-wrap">Robert Downey Jr. shared a post from <b>Stark Industries</b>.</p>
+                         <p class="tile__subtitle m-0">Robert shared: 'Stark Industries is proud to announce its brand new suit.'</p><span class="info">23 minutes ago</span></div>
+                     <div class="tile__buttons m-0">
+                        <button class="btn-transparent ">Ver detalle <i class="fas fa-angle-right"></i></button>
+                        <button class="btn-transparent ">Descartar <i class="far fa-trash-alt"></i></button>
+                     </div>
+                 </div>
+                 <!-- Fin card-->
+
+                  <!-- Card  -->
+                  <div class="tile u-items-center card">
+                     <div class="tile__icon">
+                         <figure class="avatar"><img src="https://www.seoclerk.com/pics/319222-1IvI0s1421931178.png"></figure>
+                     </div>
+                     <div class="tile__container u-hide-overflow">
+                         <p class="tile__title m-0 u-text-no-wrap">Robert Downey Jr. shared a post from <b>Stark Industries</b>.</p>
+                         <p class="tile__subtitle m-0">Robert shared: 'Stark Industries is proud to announce its brand new suit.'</p><span class="info">23 minutes ago</span></div>
+                     <div class="tile__buttons m-0">
+                        <button class="btn-transparent ">Ver detalle <i class="fas fa-angle-right"></i></button>
+                        <button class="btn-transparent ">Descartar <i class="far fa-trash-alt"></i></button>
+                     </div>
+                 </div>
+                 <!-- Fin card-->
+
+               </div>
+
+
+            </div>
+         </div>
+
+      </section>
+   </body>
+</html>
