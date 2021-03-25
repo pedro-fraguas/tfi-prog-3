@@ -6,9 +6,9 @@ function UserCard(props) {
             </div>
         
             <div class="content">
-               <p class="title">Nombre y Apellido</p>
-                  <p >Edad</p>
-                  <p> Email </p>
+               <p class="title">{props.name}</p>
+                  <p>Edad: {props.age}</p>
+                  <p>{props.email}</p>
             </div>
         
             <div class="card__action-bar u-center">

@@ -53,12 +53,9 @@ function App() {
               {/*<!-- Contenedor de tarjetas -->*/}
               <div class="grid grid-cols-3 grid-gap-3">
                 
-                < UserCard />
-                < UserCard />
-                < UserCard />
-                < UserCard />
-                < UserCard />
-                < UserCard />
+                < UserCard name='Pedro Fraguas' age='24' email='pfraguas@udesa.edu.ar'/>
+                < UserCard name='Joaquin Berardi' age='20' email='jberardi@udesa.edu.ar'/>
+                < UserCard name='Benjamin Mackinnon' age='20' email='bmackinnon@udesa.edu.ar'/>
 
               </div>
             </div>
