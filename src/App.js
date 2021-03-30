@@ -12,14 +12,9 @@ function App() {
         return (response.json())
       })
       .then((data) =>{
-        console.log(data)
         return data
       })
     };
-
-  let data = randomUserGenerator();
-  console.log(data);
-  
 
   return (
     
