@@ -1,5 +1,19 @@
 import UserCard from './components/UserCard'
 
+
+window.onload = () => {
+  randomUserGenerator()
+}
+
+const randomUserGenerator = () => {
+  fetch('https://randomuser.me/api/')
+  .then((response) => {
+    return(response.json())
+  }).then((data) =>{
+    console.log(data)
+  })
+}
+
 function App() {
   return (
     <div className="App">
@@ -52,7 +66,7 @@ function App() {
 
               {/*<!-- Contenedor de tarjetas -->*/}
               <div class="grid grid-cols-3 grid-gap-3">
-                
+
                 < UserCard name='Pedro Fraguas' age='24' email='pfraguas@udesa.edu.ar'/>
                 < UserCard name='Joaquin Berardi' age='20' email='jberardi@udesa.edu.ar'/>
                 < UserCard name='Benjamin Mackinnon' age='20' email='bmackinnon@udesa.edu.ar'/>
