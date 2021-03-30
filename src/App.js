@@ -1,58 +1,61 @@
 import UserCard from './components/UserCard'
 
 
-window.onload = () => {
-  randomUserGenerator()
-}
 
-const randomUserGenerator = () => {
-  fetch('https://randomuser.me/api/')
-  .then((response) => {
-    return(response.json())
-  }).then((data) =>{
-    console.log(data)
-  })
-}
 
 function App() {
+  window.onload = () => {
+    randomUserGenerator()
+  }
+  
+  const randomUserGenerator = () => {
+    fetch('https://randomuser.me/api/')
+      .then((response) => {
+        return(response.json())
+      })
+      .then((data) =>{
+        return data
+      })
+    }
+  
+    let data = randomUserGenerator
   return (
+    
     <div className="App">
-
       {/*<!-- HEADER -->*/}
-      <div class="header header-fixed unselectable header-animated">
-        <div class="header-brand">
-          <div class="nav-item no-hover">
-            <h6 class="title">Programacion 3</h6>
+      <div className="header header-fixed unselectable header-animated">
+        <div className="header-brand">
+          <div className="nav-item no-hover">
+            <h6 className="title">Programacion 3</h6>
           </div>
-          <div class="nav-item nav-btn" id="header-btn"> <span></span> <span></span> <span></span> </div>
+          <div className="nav-item nav-btn" id="header-btn"> <span></span> <span></span> <span></span> </div>
         </div>
-        <div class="header-nav" id="header-menu">
-          <div class="nav-left">
-            <div class="nav-item text-center">  <span class="icon"> <i class="fas fa-code"></i> </span> </div>
+        <div className="header-nav" id="header-menu">
+          <div className="nav-left">
+            <div className="nav-item text-center">  <span className="icon"> <i className="fas fa-code"></i> </span> </div>
           </div>
         </div>
       </div>
 
-      <section class="section" style={{'background-color': '#FBF8F3;'}}>
-        <div class="hero">
-          <div class="hero-body">
-            <div class="content">
-
+      <section className="section" style={{'backgroundColor': '#FBF8F3'}}>
+        <div className="hero">
+          <div className="hero-body">
+            <div className="content">
               {/*<!-- BUSCADOR -->*/}
-              <div class="form-group card">
-                 <input type="search" class="form-group-input" placeholder="Filtrar por Nombre, Apellido o Edad" />
-                 <button class="form-group-btn">Buscar</button>
+              <div className="form-group card">
+                 <input type="search" className="form-group-input" placeholder="Filtrar por Nombre, Apellido o Edad" />
+                 <button className="form-group-btn">Buscar</button>
               </div>
 
               {/*<!-- AÑADIR PERSONAS -->*/}    
-              <div class="form-group card">
-                 <input type="number" class="input-contains-icon"  placeholder="Agregar x Cantidad de personas" />
-                 <button class="form-group-btn">Añadir</button>
+              <div className="form-group card">
+                 <input type="number" className="input-contains-icon"  placeholder="Agregar x Cantidad de personas" />
+                 <button className="form-group-btn">Añadir</button>
               </div>
 
               {/*<!-- ORDENAR -->*/}
-              <div class="input-control card">
-               <select class="select" placeholder="Filtrar por">
+              <div className="input-control card">
+               <select className="select" placeholder="Filtrar por">
                   <option value="0">Ordenar por</option>
                   <option value="1">Nombre descendente</option>
                   <option value="2">Nombre ascendente</option>
@@ -61,12 +64,11 @@ function App() {
                </select>
               </div>
 
-              <div class="divider"></div>
+              <div className="divider"></div>
 
 
               {/*<!-- Contenedor de tarjetas -->*/}
-              <div class="grid grid-cols-3 grid-gap-3">
-
+              <div className="grid grid-cols-3 grid-gap-3">
                 < UserCard name='Pedro Fraguas' age='24' email='pfraguas@udesa.edu.ar'/>
                 < UserCard name='Joaquin Berardi' age='20' email='jberardi@udesa.edu.ar'/>
                 < UserCard name='Benjamin Mackinnon' age='20' email='bmackinnon@udesa.edu.ar'/>
