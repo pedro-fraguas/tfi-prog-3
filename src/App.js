@@ -9,16 +9,20 @@ function App() {
   }
   
   const randomUserGenerator = () => {
-    fetch('https://randomuser.me/api/')
+    fetch('https://randomuser.me/api/?results=15')
       .then((response) => {
-        return(response.json())
+        return (response.json())
       })
       .then((data) =>{
+        console.log(data)
         return data
       })
-    }
+    };
+
+    let data = randomUserGenerator();
+    console.log(data);
   
-    let data = randomUserGenerator
+
   return (
     
     <div className="App">
