@@ -1,20 +1,17 @@
 import UserCard from './components/UserCard'
 
-
-window.onload = () => {
-  randomUserGenerator()
-}
-
-const randomUserGenerator = () => {
-  fetch('https://randomuser.me/api/')
-  .then((response) => {
-    return(response.json())
-  }).then((data) =>{
-    console.log(data)
-  })
-}
-
 function App() {
+
+  const randomUserGenerator = () => {
+  fetch('https://randomuser.me/api/20')
+    .then((response) => {
+      return(response.json())
+    })
+    .then((data) =>{
+      return data.results
+    })
+  }
+
   return (
     <div className="App">
 
