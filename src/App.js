@@ -1,23 +1,26 @@
-import UserCard from './components/UserCard'
+import UserCard from './components/UserCard';
+import React, { Component } from 'react';
 
-function App() {
+class App extends Component {
 
-  window.onload = () => {
-    randomUserGenerator()
+constructor() {
+  super();
+  this.state = {
+    items: [],
+    contador: 1
   }
-  
-  const randomUserGenerator = () => {
-    fetch('https://randomuser.me/api/?results=15')
-      .then((response) => {
-        return (response.json())
+}
+   componentDidMount() {
+      fetch('https://randomuser.me/api/?results=15')
+      .then(result => result.json())
+      .then(data => {
+        this.setState({items: data.results});
+        console.log(data.results);
       })
-      .then((data) =>{
-        return data
-      })
-    };
+    }
 
-  return (
-    
+  render(){ 
+    return (
     <div className="App">
       {/*<!-- HEADER -->*/}
       <div className="header header-fixed unselectable header-animated">
@@ -66,18 +69,19 @@ function App() {
 
               {/*<!-- Contenedor de tarjetas -->*/}
               <div className="grid grid-cols-3 grid-gap-3">
-                < UserCard name='Pedro Fraguas' age='24' email='pfraguas@udesa.edu.ar'/>
-                < UserCard name='Joaquin Berardi' age='20' email='jberardi@udesa.edu.ar'/>
-                < UserCard name='Benjamin Mackinnon' age='20' email='bmackinnon@udesa.edu.ar'/>
-
+                {                    this.state.items.map(function(specs, idx) {
+                        return < UserCard specs={specs} key={idx}/>
+                    })
+                }
               </div>
+     
             </div>
           </div>
         </div>
       </section>
       
     </div>
-  );
+  )};
 }
 
 export default App;
