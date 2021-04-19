@@ -30,6 +30,10 @@ class App extends Component {
     })
   }
 
+  viewDetail = () => {
+    
+  }
+
   render(){ 
     return (
     <div className="App">
