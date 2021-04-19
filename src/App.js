@@ -18,6 +18,10 @@ class App extends Component {
     })
   }
 
+  deleteCard = (id) => {
+    this.setState({users: this.state.users.filter(user => user.login.uuid !== id)})
+  }
+
   render(){ 
     return (
     <div className="App">
@@ -69,8 +73,8 @@ class App extends Component {
               {/*<!-- Contenedor de tarjetas -->*/}
               <div className="grid grid-cols-3 grid-gap-3">
                 {
-                this.state.users.map(function(specs) {
-                  return < UserCard specs={specs} key={specs.login.uuid}/>
+                this.state.users.map((specs) => {
+                  return < UserCard specs={specs} key={specs.login.uuid} onDelete={this.deleteCard}/>
                 })
                 }
               </div>

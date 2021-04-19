@@ -21,8 +21,8 @@ class UserCard extends Component {
             </div>
      
             <div className="card__action-bar u-center">
-                <button className="btn-transparent ">Ver detalle <i className="fas fa-angle-right"></i></button>
-                <button className="btn-transparent ">Descartar <i className="far fa-trash-alt"></i></button>
+                <button className="btn-transparent "> Ver detalle <i className="fas fa-angle-right"></i></button>
+                <button className="btn-transparent " onClick={() => this.props.onDelete(this.props.specs.login.uuid)}> Descartar <i className="far fa-trash-alt"></i></button>
             </div>
                   
         </div>
