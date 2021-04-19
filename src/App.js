@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://randomuser.me/api/?results=15')
+    fetch('https://randomuser.me/api/?results=6')
     .then(result => result.json())
     .then(data => {
       this.setState({users: data.results});
@@ -20,6 +20,14 @@ class App extends Component {
 
   deleteCard = (id) => {
     this.setState({users: this.state.users.filter(user => user.login.uuid !== id)})
+  }
+
+  addCards = (n) => {
+    fetch('https://randomuser.me/api/?results=' + n)
+    .then(result => result.json())
+    .then(data => {
+      this.setState({users: this.state.users + data.results});
+    })
   }
 
   render(){ 
@@ -53,7 +61,8 @@ class App extends Component {
               {/*<!-- AÑADIR PERSONAS -->*/}    
               <div className="form-group card">
                 <input type="number" className="input-contains-icon"  placeholder="Agregar x Cantidad de personas" />
-                <button className="form-group-btn">Añadir</button>
+                <button className="form-group-btn" onClick={this.addCards}>Añadir</button>
+                {/* Por cuestiones de api deberiamos setear un maximo de personas a añadir (20) y chquear lo de numeros negativos*/}
               </div>
 
               {/*<!-- ORDENAR -->*/}
