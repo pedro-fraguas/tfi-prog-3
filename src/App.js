@@ -3,21 +3,20 @@ import React, { Component } from 'react';
 
 class App extends Component {
 
-constructor() {
-  super();
-  this.state = {
-    items: [],
-    contador: 1
-  }
-}
-   componentDidMount() {
-      fetch('https://randomuser.me/api/?results=15')
-      .then(result => result.json())
-      .then(data => {
-        this.setState({items: data.results});
-        console.log(data.results);
-      })
+  constructor() {
+    super();
+    this.state = {
+      users: [],
     }
+  }
+
+  componentDidMount() {
+    fetch('https://randomuser.me/api/?results=15')
+    .then(result => result.json())
+    .then(data => {
+      this.setState({users: data.results});
+    })
+  }
 
   render(){ 
     return (
@@ -43,25 +42,25 @@ constructor() {
             <div className="content">
               {/*<!-- BUSCADOR -->*/}
               <div className="form-group card">
-                 <input type="search" className="form-group-input" placeholder="Filtrar por Nombre, Apellido o Edad" />
-                 <button className="form-group-btn">Buscar</button>
+                <input type="search" className="form-group-input" placeholder="Filtrar por Nombre, Apellido o Edad" />
+                <button className="form-group-btn">Buscar</button>
               </div>
 
               {/*<!-- AÑADIR PERSONAS -->*/}    
               <div className="form-group card">
-                 <input type="number" className="input-contains-icon"  placeholder="Agregar x Cantidad de personas" />
-                 <button className="form-group-btn">Añadir</button>
+                <input type="number" className="input-contains-icon"  placeholder="Agregar x Cantidad de personas" />
+                <button className="form-group-btn">Añadir</button>
               </div>
 
               {/*<!-- ORDENAR -->*/}
               <div className="input-control card">
-               <select className="select" placeholder="Filtrar por">
+                <select className="select" placeholder="Filtrar por">
                   <option value="0">Ordenar por</option>
                   <option value="1">Nombre descendente</option>
                   <option value="2">Nombre ascendente</option>
                   <option value="3">Edad descendente</option>
                   <option value="4">Edad ascendente</option>
-               </select>
+                </select>
               </div>
 
               <div className="divider"></div>
@@ -69,9 +68,10 @@ constructor() {
 
               {/*<!-- Contenedor de tarjetas -->*/}
               <div className="grid grid-cols-3 grid-gap-3">
-                {                    this.state.items.map(function(specs, idx) {
-                        return < UserCard specs={specs} key={idx}/>
-                    })
+                {
+                this.state.users.map(function(specs) {
+                  return < UserCard specs={specs} key={specs.login.uuid}/>
+                })
                 }
               </div>
      

@@ -26,26 +26,6 @@ class UserCard extends Component {
                   
         </div>
 
-        /**
-         * <div className="card u-flex u-flex-column">
-            <div className="card__container">
-                <div className="card__image" style={{"background-image": "url(" + props.user.picture.medium + ")"}}></div>
-            </div>
-        
-            <div className="content">
-                <p className="title">{props.user.name.first} {props.user.name.last}</p>
-                <p>Edad: {props.user.dob.age}</p>
-                <p>{props.user.email}</p>
-            </div>
-        
-            <div className="card__action-bar u-center">
-                <button className="btn-transparent ">Ver detalle <i className="fas fa-angle-right"></i></button>
-                <button className="btn-transparent ">Descartar <i className="far fa-trash-alt"></i></button>
-            </div>
-                  
-        </div>
-         */
-
         )};
 }
 
