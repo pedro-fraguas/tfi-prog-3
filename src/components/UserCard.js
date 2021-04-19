@@ -13,10 +13,10 @@ class UserCard extends Component {
                 </div>
 
             <div className="content">
-                <p className="title">{this.props.specs.name.first}</p>
+                <p className="title">{this.props.specs.name.first} {this.props.specs.name.last}</p>
                 <p>Email: {this.props.specs.email}</p>
                 <p>Gender: {this.props.specs.gender}</p>
-                <p>DoB: {this.props.specs.dob.date}'('{this.props.specs.dob.age}')'</p>
+                <p>DoB: {this.props.specs.dob.date} ({this.props.specs.dob.age})</p>
                 <p>Origin: {this.props.specs.location.country}</p>
             </div>
      
