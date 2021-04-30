@@ -1,12 +1,13 @@
 import UserCard from './components/UserCard';
-import React, { Component } from 'react';
+import React, { Component, useImperativeHandle, useState, Modal} from 'react';
+
 
 class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      users: [],
+      users: []
     }
   }
 
@@ -22,6 +23,7 @@ class App extends Component {
     this.setState({users: this.state.users.filter(user => user.login.uuid !== id)})
   }
 
+
   addCards = (n) => {
     fetch('https://randomuser.me/api/?results=' + n)
     .then(result => result.json())
@@ -30,11 +32,19 @@ class App extends Component {
     })
   }
 
-  viewDetail = () => {
-    
+  viewDetail = (id) => {
+    //Recibir ID usuario
+    //Disparar Modal
+
   }
 
+  closeDetail = () => {
+    //Cambiar estado del modal a False
+  }
+
+
   render(){ 
+    
     return (
     <div className="App">
       {/*<!-- HEADER -->*/}
@@ -88,12 +98,11 @@ class App extends Component {
 
               <div className="divider"></div>
 
-
               {/*<!-- Contenedor de tarjetas -->*/}
               <div className="grid grid-cols-3 grid-gap-3">
                 {
                 this.state.users.map((specs) => {
-                  return < UserCard specs={specs} key={specs.login.uuid} onDelete={this.deleteCard}/>
+                  return < UserCard specs={specs} key={specs.login.uuid} onDelete={this.deleteCard} onDetalle={this.viewDetail}/> //Uso deleteCard porque me trae la ID
                 })
                 }
               </div>
