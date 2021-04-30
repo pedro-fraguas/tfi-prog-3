@@ -46,7 +46,7 @@ class UserCard extends Component {
                                 <p><b>Phone Number: </b> {this.props.specs.cell}</p>
                                 <p><b>Gender:</b> {this.props.specs.gender}</p>
                                 <p><b>Age:</b> {this.props.specs.dob.age}</p>
-                                <p><b>Fecha de nacimiento: </b>{this.state.date}</p>
+                                <p><b>Fecha de nacimiento:</b> {this.state.date}</p>
                                 <p><b>Country:</b> {this.props.specs.location.country} </p>
                                 <p><b>City, State:</b> {this.props.specs.location.city} , {this.props.specs.location.state} </p>
                                 <p><b> Postal Code:</b> {this.props.specs.location.postcode} </p>
