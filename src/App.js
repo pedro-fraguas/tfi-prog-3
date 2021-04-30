@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://randomuser.me/api/?results=3')
+    fetch('https://randomuser.me/api/?results=6')
     .then(result => result.json())
     .then(data => {
       this.setState({users: data.results});
@@ -35,6 +35,12 @@ class App extends Component {
   sorting = (x) => {
     if (x == 'alpha-desc') {
       this.sortAlphaDesc()
+    } else if (x == 'alpha-asc') {
+      this.sortAlphaAsc()
+    } else if (x == 'age-desc') {
+      this.sortAgeDesc()
+    } else if (x == 'age-asc') {
+      this.sortAgeAsc()
     }
   }
 
@@ -44,6 +50,47 @@ class App extends Component {
       if (a.name.first < b.name.first){
         return 1
       } else if (a.name.first > b.name.first){
+        return -1
+      } else {
+        return 0
+      }
+    })
+    this.setState({users: users})
+  }
+  sortAlphaAsc = () => {
+    let users = []
+    users = this.state.users.sort(function (a, b) {
+      if (a.name.first > b.name.first){
+        return 1
+      } else if (a.name.first < b.name.first){
+        return -1
+      } else {
+        return 0
+      }
+    })
+    this.setState({users: users})
+  }
+
+  sortAgeDesc = () => {
+    let users = []
+    users = this.state.users.sort(function (a, b) {
+      if (a.dob.age < b.dob.age){
+        return 1
+      } else if (a.dob.age > b.dob.age){
+        return -1
+      } else {
+        return 0
+      }
+    })
+    this.setState({users: users})
+  }
+
+  sortAgeAsc = () => {
+    let users = []
+    users = this.state.users.sort(function (a, b) {
+      if (a.dob.age > b.dob.age){
+        return 1
+      } else if (a.dob.age < b.dob.age){
         return -1
       } else {
         return 0
@@ -95,14 +142,14 @@ class App extends Component {
 
               {/*<!-- ORDENAR -->*/}
               <div className="form-group input-control card">
-                <select className="select">
+                <select className="select" id="sorter">
                   <option selected disabled>Ordenar por</option>
-                  <option value="1">Nombre descendente</option>
-                  <option value="2">Nombre ascendente</option>
-                  <option value="3">Edad descendente</option>
-                  <option value="4">Edad ascendente</option>
+                  <option value="alpha-desc">Nombre descendente</option>
+                  <option value="alpha-asc">Nombre ascendente</option>
+                  <option value="age-desc">Edad descendente</option>
+                  <option value="age-asc">Edad ascendente</option>
                 </select>
-                <button className="form-group-btn" onClick={() => this.sorting()}>Ordenar</button>
+                <button className="form-group-btn" onClick={() => this.sorting(document.getElementById("sorter").value)}>Ordenar</button>
               </div>
 
               <div className="divider"></div>
