@@ -190,7 +190,11 @@ class App extends Component {
             </div>
           </div>
         </div>
-
+        <div class="footer">
+          <h6 class="footer__title white uppercase">Pedro Fraguas</h6>
+          <h6 class="footer__title white uppercase">Benjamin Mackinnon</h6>
+          <h6 class="footer__title white uppercase">Joaquin Berardi</h6>
+     </div>
         {/* Modal */}
         <div class="modal modal-animated--zoom-in modal-large" id="filter-modal">
           <a class="modal-overlay close-btn" aria-label="Close"></a>
@@ -218,6 +222,8 @@ class App extends Component {
             </div>
       </div>
       </section>
+
+
       
     </div>
   )};
