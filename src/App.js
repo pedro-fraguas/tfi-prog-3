@@ -34,19 +34,19 @@ class App extends Component {
     })
   }
 
-  filterCards = (name, crit, age, email) => {
+  filterCards = (name, crit, age, last_name) => {
     let users = this.state.users
 
     if (name !== '') {
       users = users.filter(user => {return user.name.first.includes(name)})
     }
+    if (last_name !== '') {
+      users = users.filter(user => {return user.name.last.includes(last_name)})
+    }
     if (crit === 'menor') {
       users = users.filter(user => {return (user.dob.age < age)})
     } else if (crit === 'mayor') {
       users = users.filter(user => {return (user.dob.age > age)})
-    }
-    if (email !== '') {
-      users = users.filter(user => {return user.email.includes(email)})
     }
 
     this.setState({users: users})
@@ -203,6 +203,9 @@ class App extends Component {
                   <input type="text" id="name-crit" placeholder="Name"></input>
                 </div>
                 <div class="form-group">
+                  <input type="text" id="last-name-crit" placeholder="Last Name"></input>
+                </div>
+                <div class="form-group">
                   <select id="filter-crit">
                     <option selected disabled>Older or Younger</option>
                     <option value="mayor">Older than</option>
@@ -210,10 +213,7 @@ class App extends Component {
                   </select>
                   <input type="number" id="age-crit" placeholder="Age"></input>
                 </div>
-                <div class="form-group">
-                  <input type="text" id="email-crit" placeholder="E-Mail"></input>
-                </div>
-                <button onClick={() => this.filterCards(document.getElementById("name-crit").value, document.getElementById("filter-crit").value, document.getElementById("age-crit").value, document.getElementById("email-crit").value)}>Filter</button>
+                <button onClick={() => this.filterCards(document.getElementById("name-crit").value, document.getElementById("filter-crit").value, document.getElementById("age-crit").value, document.getElementById("last-name-crit").value)}>Filter</button>
               </div>
             </div>
       </div>
