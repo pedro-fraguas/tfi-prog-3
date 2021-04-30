@@ -75,14 +75,15 @@ class App extends Component {
               </div>
 
               {/*<!-- ORDENAR -->*/}
-              <div className="input-control card">
-                <select className="select" placeholder="Filtrar por">
-                  <option value="0">Ordenar por</option>
+              <div className="form-group input-control card">
+                <select className="select">
+                  <option selected disabled>Ordenar por</option>
                   <option value="1">Nombre descendente</option>
                   <option value="2">Nombre ascendente</option>
                   <option value="3">Edad descendente</option>
                   <option value="4">Edad ascendente</option>
                 </select>
+                <button className="form-group-btn">Ordenar</button>
               </div>
 
               <div className="divider"></div>
