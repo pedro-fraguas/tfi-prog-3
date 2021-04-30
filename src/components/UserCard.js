@@ -32,8 +32,8 @@ class UserCard extends Component {
                 </div>
             
                 <div className="card__action-bar u-center">
-                    <a href="#test-modal"><button  className="btn-transparent" > Ver detalle <i className="fas fa-angle-right"></i></button>  </a>
-                    <button className="btn-transparent " onClick={() => this.props.onDelete(this.props.specs.login.uuid)}> Descartar <i className="far fa-trash-alt"></i></button>
+                    <a href="#test-modal"><button  className="btn-transparent" > View detail <i className="fas fa-angle-right"></i></button>  </a>
+                    <button className="btn-transparent " onClick={() => this.props.onDelete(this.props.specs.login.uuid)}> Delete <i className="far fa-trash-alt"></i></button>
                 </div>
                 
                 {/* Modal */}
@@ -50,10 +50,10 @@ class UserCard extends Component {
                                 <p><b>Phone Number: </b> {this.props.specs.cell}</p>
                                 <p><b>Gender:</b> {this.props.specs.gender}</p>
                                 <p><b>Age:</b> {this.props.specs.dob.age}</p>
-                                <p><b>Fecha de nacimiento:</b> {this.state.date}</p>
+                                <p><b>Date of birth:</b> {this.state.date}</p>
                                 <p><b>Country:</b> {this.props.specs.location.country} </p>
                                 <p><b>City, State:</b> {this.props.specs.location.city} , {this.props.specs.location.state} </p>
-                                <p><b> Postal Code:</b> {this.props.specs.location.postcode} </p>
+                                <p><b>Postal Code:</b> {this.props.specs.location.postcode} </p>
                                 <p><b>Registration date:</b> {this.props.specs.registered.date} </p>
                             </div>
 

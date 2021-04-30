@@ -148,10 +148,10 @@ class App extends Component {
 
                 {/*<!-- AÑADIR PERSONAS -->*/}    
                 <div className="form-group card">
-                  <input type="number" className="input-contains-icon add-n-cards"  placeholder="Agregar x Cantidad de personas" />
+                  <input type="number" className="input-contains-icon" id="add-cards" placeholder="Amount of cards" />
                   <button 
                   className="form-group-btn" 
-                  onClick={() => this.addCards(document.querySelector('.add-n-cards').value)}
+                  onClick={() => this.addCards(document.getElementById('add-cards').value)}
                   >
                     ADD
                   </button>
@@ -161,18 +161,18 @@ class App extends Component {
                 {/*<!-- ORDENAR -->*/}
                 <div className="form-group input-control card">
                   <select className="select" id="sorter">
-                    <option selected disabled>Ordenar por</option>
-                    <option value="alpha-desc">Nombre descendente</option>
-                    <option value="alpha-asc">Nombre ascendente</option>
-                    <option value="age-desc">Edad descendente</option>
-                    <option value="age-asc">Edad ascendente</option>
+                    <option selected disabled>Sort by</option>
+                    <option value="alpha-desc">Name descendant</option>
+                    <option value="alpha-asc">Name ascendant</option>
+                    <option value="age-desc">Age descendant</option>
+                    <option value="age-asc">Age ascendant</option>
                   </select>
                   <button className="form-group-btn" onClick={() => this.sorting(document.getElementById("sorter").value)}>SORT</button>
                 </div>
 
                 {/*<!-- BUSCADOR -->*/}
-                <a href="#filter-modal"><button className="form-group-btn">Buscar</button></a>
-                <a><button className="form-group-btn" onClick={() => this.resetCards()}>Reset</button></a>
+                <a href="#filter-modal"><button className="form-group-btn">FILTER</button></a>
+                <a><button className="form-group-btn" onClick={() => this.resetCards()}>RESET</button></a>
 
               </div>
 
