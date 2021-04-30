@@ -34,6 +34,26 @@ class App extends Component {
     
   }
 
+  sorting = (x) => {
+    if (x == 'alpha-desc') {
+      this.sortAlphaDesc()
+    }
+  }
+
+  sortAlphaDesc = () => {
+    let users = []
+    users = this.state.users.sort(function (a, b) {
+      if (a.name.first < b.name.first){
+        return 1
+      } else if (a.name.first > b.name.first){
+        return -1
+      } else {
+        return 0
+      }
+    })
+    this.setState({users: users})
+  }
+
   render(){ 
     return (
     <div className="App">
@@ -83,7 +103,7 @@ class App extends Component {
                   <option value="3">Edad descendente</option>
                   <option value="4">Edad ascendente</option>
                 </select>
-                <button className="form-group-btn">Ordenar</button>
+                <button className="form-group-btn" onClick={() => this.sorting()}>Ordenar</button>
               </div>
 
               <div className="divider"></div>
