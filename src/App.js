@@ -80,6 +80,7 @@ class App extends Component {
     })
     this.setState({users: users})
   }
+
   sortAlphaAsc = () => {
     let users = this.state.users.sort(function (a, b) {
       if (a.name.first > b.name.first){
@@ -118,22 +119,6 @@ class App extends Component {
     })
     this.setState({users: users})
   }
-
-
-  // moveCard = (id,to) => {
-  //   let users = this.state.users;
-  //   let user =  this.state.users.filter(user => user.login.uuid === id);
-  //   let a = this.state.users.indexOf(user);
-  //   console.log(a);
-  //   users[a] = users[a+to];
-  //   users[a+to] = user;
-  //   //Me fijo si el usuario es el primero o el ultimo
-  //   // if (id != users[0] || id !== users.length){
-  //   //   //
-  //   // } else alert("El elemento no se puede mover")
-  //   this.setState({users: users})
-  // }
-
 
   render(){ 
     
@@ -197,7 +182,7 @@ class App extends Component {
               <div className="grid grid-cols-3 grid-gap-3">
                 {
                 this.state.users.map((specs) => {
-                  return < UserCard specs={specs} key={specs.login.uuid} onDelete={this.deleteCard} onMove={this.moveCard}/>
+                  return < UserCard specs={specs} key={specs.login.uuid} onDelete={this.deleteCard}/>
                 })
                 }
               </div>

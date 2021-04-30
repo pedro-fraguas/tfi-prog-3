@@ -34,8 +34,6 @@ class UserCard extends Component {
                 <div className="card__action-bar u-center">
                     <a href="#test-modal"><button  className="btn-transparent" > Ver detalle <i className="fas fa-angle-right"></i></button>  </a>
                     <button className="btn-transparent " onClick={() => this.props.onDelete(this.props.specs.login.uuid)}> Descartar <i className="far fa-trash-alt"></i></button>
-                    {/*<button className="btn-transparent " onClick={() => this.props.onMove(this.props.specs.login.uuid,-1)}> Mover izq </button>
-                    <button className="btn-transparent " onClick={() => this.props.onMove(this.props.specs.login.uuid, 1)}> Mover der </button>*/}
                 </div>
                 
                 {/* Modal */}
