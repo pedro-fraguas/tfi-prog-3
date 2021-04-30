@@ -25,7 +25,6 @@ class App extends Component {
     this.setState({users: this.state.users.filter(user => user.login.uuid !== id)})
   }
 
-
   addCards = (n) => {
     fetch('https://randomuser.me/api/?results=' + n)
     .then(result => result.json())
@@ -38,7 +37,7 @@ class App extends Component {
   filterCards = (name, crit, age, email) => {
     let users = this.state.users
 
-    if (name !== null) {
+    if (name !== '') {
       users = users.filter(user => {return user.name.first.includes(name)})
     }
     if (crit === 'menor') {
@@ -57,21 +56,20 @@ class App extends Component {
     this.setState({users: this.state.storage});
   }
 
-  sorting = (x) => {
-    if (x === 'alpha-desc') {
+  sorting = (value) => {
+    if (value === 'alpha-desc') {
       this.sortAlphaDesc()
-    } else if (x === 'alpha-asc') {
+    } else if (value === 'alpha-asc') {
       this.sortAlphaAsc()
-    } else if (x === 'age-desc') {
+    } else if (value === 'age-desc') {
       this.sortAgeDesc()
-    } else if (x === 'age-asc') {
+    } else if (value === 'age-asc') {
       this.sortAgeAsc()
     }
   }
 
   sortAlphaDesc = () => {
-    let users = []
-    users = this.state.users.sort(function (a, b) {
+    let users = this.state.users.sort(function (a, b) {
       if (a.name.first < b.name.first){
         return 1
       } else if (a.name.first > b.name.first){
@@ -83,8 +81,7 @@ class App extends Component {
     this.setState({users: users})
   }
   sortAlphaAsc = () => {
-    let users = []
-    users = this.state.users.sort(function (a, b) {
+    let users = this.state.users.sort(function (a, b) {
       if (a.name.first > b.name.first){
         return 1
       } else if (a.name.first < b.name.first){
@@ -97,8 +94,7 @@ class App extends Component {
   }
 
   sortAgeDesc = () => {
-    let users = []
-    users = this.state.users.sort(function (a, b) {
+    let users = this.state.users.sort(function (a, b) {
       if (a.dob.age < b.dob.age){
         return 1
       } else if (a.dob.age > b.dob.age){
@@ -111,8 +107,7 @@ class App extends Component {
   }
 
   sortAgeAsc = () => {
-    let users = []
-    users = this.state.users.sort(function (a, b) {
+    let users = this.state.users.sort(function (a, b) {
       if (a.dob.age > b.dob.age){
         return 1
       } else if (a.dob.age < b.dob.age){
@@ -157,7 +152,7 @@ class App extends Component {
                   className="form-group-btn" 
                   onClick={() => this.addCards(document.querySelector('.add-n-cards').value)}
                   >
-                    Añadir
+                    ADD
                   </button>
                   {/* Por cuestiones de api deberiamos setear un maximo de personas a añadir (20) y chquear lo de numeros negativos*/}
                 </div>
@@ -171,7 +166,7 @@ class App extends Component {
                     <option value="age-desc">Edad descendente</option>
                     <option value="age-asc">Edad ascendente</option>
                   </select>
-                  <button className="form-group-btn" onClick={() => this.sorting(document.getElementById("sorter").value)}>Ordenar</button>
+                  <button className="form-group-btn" onClick={() => this.sorting(document.getElementById("sorter").value)}>SORT</button>
                 </div>
 
                 {/*<!-- BUSCADOR -->*/}
