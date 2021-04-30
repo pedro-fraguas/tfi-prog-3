@@ -3,6 +3,14 @@ import React, { Component } from 'react';
 class UserCard extends Component {
     constructor(props){
         super();
+        this.state={
+            date:[],
+        }
+    }
+
+    componentDidMount(){
+        let date= this.props.specs.dob.date;
+        this.setState({date: date.substr(0,10)});
     }
 
     render(){
@@ -37,7 +45,7 @@ class UserCard extends Component {
                     <p className="title">{this.props.specs.name.first} {this.props.specs.name.last} ({this.props.specs.dob.age})</p>
                     <p>Email: {this.props.specs.email}</p>
                     <p>Gender: {this.props.specs.gender}</p>
-                    <p>{this.props.specs.dob.date}'('{this.props.specs.dob.age}')'</p>
+                    <p>{this.state.date}</p>
                 </div>
             
                 <div className="card__action-bar u-center">
